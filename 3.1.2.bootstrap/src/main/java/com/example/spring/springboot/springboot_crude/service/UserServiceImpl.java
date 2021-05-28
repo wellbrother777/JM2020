@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void addUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         if (user.getId() == null) {
             userDao.addUser(user);
         } else userDao.updateUser(user);
