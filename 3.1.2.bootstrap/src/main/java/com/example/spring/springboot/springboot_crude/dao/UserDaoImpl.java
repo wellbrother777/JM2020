@@ -48,13 +48,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void addUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+       user.setPassword(passwordEncoder.encode(user.getPassword()));
         entityManager.persist(user);
     }
 
     @Override
     public User updateUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+   //     user.setPassword(passwordEncoder.encode(user.getPassword()));
         entityManager.merge(user);
         return user;
     }

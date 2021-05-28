@@ -36,7 +36,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void addUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         if (user.getId() == null) {
             userDao.addUser(user);
@@ -52,7 +51,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User updateUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userDao.updateUser(user);
     }
 

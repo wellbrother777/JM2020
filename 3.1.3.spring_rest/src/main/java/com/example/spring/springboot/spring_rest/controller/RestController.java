@@ -2,6 +2,7 @@ package com.example.spring.springboot.spring_rest.controller;
 
 import com.example.spring.springboot.spring_rest.model.User;
 import com.example.spring.springboot.spring_rest.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,6 +19,7 @@ public class RestController {
 
     private UserService userService;
 
+    @Autowired
     public RestController(UserService userService) {
         this.userService = userService;
     }

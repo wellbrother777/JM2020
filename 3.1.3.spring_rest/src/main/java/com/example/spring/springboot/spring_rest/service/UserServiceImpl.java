@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
-@Service("userService")
+@Service
 @EnableJpaRepositories(basePackages = {"com.example.spring.springboot.spring_rest.repository"})
 @Transactional
 public class UserServiceImpl implements UserService {
