@@ -1,12 +1,12 @@
-//------------------ALL-USERS--------------------------------
-
+// //------------------ALL-USERS--------------------------------
+//
 function getUsers() {
 
     fetch("http://localhost:8080/rest/users")
         .then((res) => res.json())
         .then((data) => {
             let temp = "";
-            data.forEach(function (user) {
+            data.forEach(user => {
 
                 temp += `
                 <tr>
@@ -29,7 +29,7 @@ function getUsers() {
             document.getElementById("usersTable").innerHTML = temp;
         })
 }
-getUsers()
+getUsers();
 
 //------------------fillModals--------------------------------
 
@@ -152,10 +152,10 @@ function butEdit() {
 function selectRole(r) {
     let roles = [];
     if (r.indexOf("USER") >= 0) {
-        roles.push({"id": 2});
+        roles.push({"id": 2, "role": "ROLE_USER"});
     }
     if (r.indexOf("ADMIN") >= 0) {
-        roles.push({"id": 1});
+        roles.push({"id": 1, "role": "ROLE_ADMIN"});
     }
     return roles;
 }

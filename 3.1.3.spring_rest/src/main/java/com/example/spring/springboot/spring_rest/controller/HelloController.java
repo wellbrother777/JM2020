@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("")
 public class HelloController {
 
-	@GetMapping(value = "/")
-	public String homePage() {
-		return "login";
-	}
-
 	@GetMapping("/login")
 	public String loginPage() {
 		return "login";

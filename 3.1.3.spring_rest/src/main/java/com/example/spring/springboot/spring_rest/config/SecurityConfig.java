@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .clearAuthentication(true)
                 .deleteCookies("JSESSIONID", "remember-me")
                 // указываем URL при удачном логауте
-                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/login")
                 //выклчаем кроссдоменную секьюрность (на этапе обучения неважна)
                 .and().csrf().disable();
 
